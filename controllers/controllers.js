@@ -39,7 +39,7 @@ employeeCtrl.editEmployee = async (req, res)=>{
 };
 
 employeeCtrl.deleteEmployee = async (req, res)=>{
-    await Employee.findOneAndDelete(req.params.id);
+    await Employee.findByIdAndDelete(req.params.id);
     res.json({
         status: 'Employee Deleted'
     });
