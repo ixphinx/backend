@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const morgan = require('morgan');
+const cors = require('cors');
 
 //Database
 const URI = 'mongodb+srv://admin:huevon33@database-aizqn.gcp.mongodb.net/jugadores?retryWrites=true&w=majority';
@@ -16,6 +17,7 @@ app.set('port', process.env.PORT || 3000);
 //Middlewares
 app.use(morgan('dev'));
 app.use(express.json());
+app.use(cors({origin: 'https://localhost:4200'}));
 
 //Routes
 app.use(require('./routes/routes'));
