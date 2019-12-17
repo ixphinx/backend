@@ -17,7 +17,7 @@ app.set('port', process.env.PORT || 3000);
 //Middlewares
 app.use(morgan('dev'));
 app.use(express.json());
-app.use(cors({origin: 'https://33league.000webhostapp.com/'}));
+app.use(cors({origin: 'https://33league.000webhostapp.com'}));
 
 //Routes
 app.use(require('./routes/routes'));
